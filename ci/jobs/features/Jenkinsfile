@@ -1,0 +1,8 @@
+ post {
+    always {
+      script {
+        sendBuildData(currentBuild)
+        if (skipBuild) {
+          info 'All builds has been skipped due to Anvil response'
+          return
+        }
